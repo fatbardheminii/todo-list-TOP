@@ -4,12 +4,163 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>ToDo-List</title>
+    <link rel="stylesheet" href="style.css" />
     <script
       src="https://kit.fontawesome.com/c815d48bf5.js"
       crossorigin="anonymous"
     ></script>
   </head>
   <body>
-  
+    <header>
+      <i class="fa-solid fa-check-double fa-2xl"></i>
+      <h1>ToDo List</h1>
+    </header>
+    <main>
+      <div class="tasks-schedule">
+        <div class="schedule-wrapper inbox">
+          <i class="fa-solid fa-inbox"></i>
+          <h3 class="inbox-header">Inbox</h3>
+        </div>
+        <div class="schedule-wrapper today">
+          <i class="fa-solid fa-calendar-day"></i>
+          <h3 class="today-header">Today</h3>
+        </div>
+        <div class="schedule-wrapper this-week">
+          <i class="fa-solid fa-calendar-days"></i>
+          <h3 class="this-week-header">This Week</h3>
+        </div>
+        <div class="schedule-wrapper importat">
+          <i class="fa-solid fa-circle-exclamation"></i>
+          <h3 class="important-tasks-header">Important tasks</h3>
+        </div>
+      </div>
+      <div class="projects-container">
+        <div class="projects-title">
+            <h2 class="projects-header">Projects:</h2>
+            <i class="fa-solid fa-circle-plus fa-xl add-project"></i>
+        </div>
+        <h3 class="project-id name">first project</h3>
+      </div>
+      <div class="tasks-mode">
+        <div class="add-task-div">
+            <h3>Add Task:</h3>
+            <i class="fa-solid fa-circle-plus fa-2xl"></i>
+        </div>
+        <h3 class="task-mode-title">Tasks:</h3>
+        <div class="task-item">
+          <div class="task-item-left">
+            <i class="fa-regular fa-circle"></i>
+            <i class="fa-regular fa-circle-check hide"></i>
+            <div class="task-name">Name of task</div>
+          </div>
+          <div class="task-item-right">
+            <div class="importance-wrapper">
+              <p>Importance:</p>
+              <p class="importance-level">High</p>
+            </div>
+            <div class="due-date">
+              <p class="due-date-para">08.06.2024</p>
+            </div>
+            <div class="buttons-wrapper">
+              <i class="fa-solid fa-pencil" id="edit-btn"></i>
+              <i class="fa-solid fa-circle-info" id="info-btn"></i>
+              <i class="fa-solid fa-trash-can" id="delete-btn"></i>
+            </div>
+          </div>
+        </div>
+        <div class="task-item medium">
+          <div class="task-item-left">
+            <i class="fa-regular fa-circle"></i>
+            <i class="fa-regular fa-circle-check hide"></i>
+            <div class="task-name">Name of task</div>
+          </div>
+          <div class="task-item-right">
+            <div class="importance-wrapper">
+              <p>Importance:</p>
+              <p class="importance-level">High</p>
+            </div>
+            <div class="due-date">
+              <p class="due-date-para">08.06.2024</p>
+            </div>
+            <div class="buttons-wrapper">
+              <i class="fa-solid fa-pencil" id="edit-btn"></i>
+              <i class="fa-solid fa-circle-info" id="info-btn"></i>
+              <i class="fa-solid fa-trash-can" id="delete-btn"></i>
+            </div>
+          </div>
+        </div>
+        <div class="task-item high">
+          <div class="task-item-left">
+            <i class="fa-regular fa-circle"></i>
+            <i class="fa-regular fa-circle-check hide"></i>
+            <div class="task-name">Name of task</div>
+          </div>
+          <div class="task-item-right">
+            <div class="importance-wrapper">
+              <p>Importance:</p>
+              <p class="importance-level">High</p>
+            </div>
+            <div class="due-date">
+              <p class="due-date-para">08.06.2024</p>
+            </div>
+            <div class="buttons-wrapper">
+              <i class="fa-solid fa-pencil" id="edit-btn"></i>
+              <i class="fa-solid fa-circle-info" id="info-btn"></i>
+              <i class="fa-solid fa-trash-can" id="delete-btn"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <p>
+        Copyright © F.Emini <span class="year"></span>
+        <a href="https://github.com/fatbardheminii"
+          ><i class="fa-brands fa-github"></i
+        ></a>
+      </p>
+    </footer>
+    <div class="overlay"></div>
+    <form action="" id="form">
+      <div class="form-title">
+        <h3>Add Task</h3> 
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+      <div class="form-item">
+        <label for="title" class="title"
+          >Title <span class="title-star">*</span></label
+        >
+        <input type="text" id="title" required/>
+      </div>
+      <div class="form-item">
+        <label for="description" class="description">Description</label>
+        <input type="text" id="description" />
+      </div>
+      <div class="form-item">
+        <label for="due-date" class="due-date">Due Date</label>
+        <input type="date" id="due-date" />
+      </div>
+      <div class="form-item">
+        <label for="importance" class="importance">Importance</label>
+        <select name="importance" id="importance">
+          <option value disabled selected>How important is this task?</option>
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
+        </select>
+      </div>
+      <div class="form-item">
+        <label for="Project" class="Project">Project</label>
+        <select name="Project" id="Project">
+          <option value disabled selected>Choose Project</option>
+          <option value="first-project">First Project</option>
+          <option value="second-project">Second Project</option>
+        </select>
+      </div>
+      <div class="form-buttons">
+        <button id="cancel-btn">Cancel</button>
+        <button id="add-btn">Add</button>
+      </div>
+    </form>
   </body>
 </html>

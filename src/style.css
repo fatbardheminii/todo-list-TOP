@@ -1,0 +1,315 @@
+/*General Selectors*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --dark-bg: #116D6E;
+    --light-bg: #F1EFEF;
+    --mint-bg: #64CCC5;
+    --hover-grey: #d8d9daea;
+    --main-height: calc(100% - 120px);
+}
+
+body {  
+    width: 100%;
+    height: 100vh;
+    font-size: 18px;
+    background-color: var(--dark-bg);
+}
+
+i:hover {
+    cursor: pointer;
+    transform: scale(1.15);
+}
+
+.hide {
+    display: none;
+}
+
+/*Header Selectors*/
+header {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 2rem;
+    background-color: var(--dark-bg);
+    color: var(--light-bg);
+}
+
+.fa-check-double {
+    margin-right: 1rem;
+}
+
+/*Main Selectors*/
+
+main {
+    width: 100%;
+    height: var(--main-height);
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: 1fr 3fr;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: var(--mint-bg);
+}
+
+main > * {
+    /* margin: 1rem; */
+    padding: 1rem;
+    border-radius: 5px;
+    background-color: var(--light-bg);
+}
+
+.tasks-schedule {
+    grid-column: 1 / 2;
+    grid-row: 1 / 2;
+}
+
+.schedule-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: .5rem;
+}
+
+.schedule-wrapper i {
+    margin: 0 1rem;
+}
+
+.schedule-wrapper h3 {
+    width: 80%;
+}
+
+.projects-container {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+}
+
+.projects-title {
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: default;
+}
+
+.tasks-mode {
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+}
+
+.fa-circle-plus {
+    margin: 1.5rem;
+    color: var(--dark-bg);
+}
+
+.task-item {
+    padding: .5rem;
+    margin: .5rem 0;
+    width: 100%;
+    height: 40px;
+    border: 1px solid black;
+    border-radius: 2px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    font-weight: bold;
+}
+
+
+.low {
+    border: 1px solid green;
+}
+
+.low * {
+    color: green;
+}
+
+.medium {
+    border: 1px solid orange;
+}
+
+.medium * {
+    color: #FF8F00;
+}
+
+.high {
+    border: 1px solid red;
+}
+
+.high * {
+    color: red;
+}
+
+.task-item-left {
+    width: 50%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.task-item-left > * {
+    margin: 0 .5rem;
+}
+
+.task-item-right {
+    width: 30%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task-item-right > * {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 33%;
+}
+
+.add-task-div {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+/*hover on items*/
+.schedule-wrapper:hover,
+.projects-container h3:hover,
+.task-item:hover,
+.projects-title:hover {
+    background-color: var(--hover-grey);
+    cursor: pointer;
+}
+
+/*Footer Selectors*/
+footer {
+    width: 100%;
+    height: 60px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--dark-bg);
+    color: var(--light-bg);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.year {
+    margin: 0 .5rem;
+}
+
+
+/*Form, Overlay Selectors*/
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 9;
+}
+
+
+form {
+  display: none;
+  width: 300px;
+  padding: 1rem;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #e8efcf;
+  border-radius: 10px;
+  z-index: 10;
+}
+
+.form-title {
+    background-color: var(--dark-bg);
+    color: var(--light-bg);
+    margin-bottom: 1rem;
+    padding: .5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin-bottom: .5rem;
+}
+
+.title-star {
+    color: red;
+}
+
+input,select {
+    height: 25px;
+    border-radius: 3px;
+    border: none;
+    padding: 5px;
+}
+
+select:hover {
+    cursor: pointer;
+}
+
+label {
+    margin-bottom: .5rem;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.form-buttons > * {
+    cursor: pointer;
+    text-transform: uppercase;
+    width: 95px;
+    height: 25px;
+    margin-left: 1.25rem;
+    margin-top: 1.25rem;
+    border-radius: 5px;
+    border: none;
+}
+
+#cancel-btn {
+    color: rgba(255, 0, 0, 0.7);
+    border: 2px solid rgba(255, 0, 0, 0.7);
+    transition: all ease-in-out .25s;
+}
+
+#cancel-btn:hover {
+    background-color: rgba(255, 0, 0, 0.7);
+    color: var(--light-bg);
+    transform: scaleX(1.1);
+}
+
+#add-btn {
+    color: green;
+    border: 2px solid green;
+    transition: all ease-in-out .25s;
+}
+
+#add-btn:hover {
+    background-color: green;
+    color: var(--light-bg);
+    transform: scaleX(1.1);
+}
+
+/*Continue with icon circle plus add X icon at form .. small details on css then JS*/
